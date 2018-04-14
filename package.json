@@ -1,0 +1,26 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "My system analysis",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mine",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "connect-flash": "*",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "handlebars-helpers": "^0.10.0",
+    "handlebars-utils": "^1.0.6",
+    "just-handlebars-helpers": "^1.0.13",
+    "moment": "*",
+    "multer": "*",
+    "mysql": "*",
+    "wait.for-es6": "^0.1.0"
+  }
+}

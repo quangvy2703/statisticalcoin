@@ -1,0 +1,88 @@
+{{#if projects}}
+<table class="table table-striped">
+	<tr>
+		<th>Market</th>
+		<th>Attribute</th>
+		<th>H2</th>
+		<th>H4</th>	
+		<th>h6</th>
+		<th>h8</th>
+		<th>h10</th>
+		<th>h12</th>
+		<th>h14</th>
+		<th>h16</th>
+		<th>h18</th>
+		<th>h20</th>
+		<th>h22</th>
+		<th>h24</th>
+		<th>H26</th>
+		<th>H28</th>
+		<th>H30</th>
+		<th>H32</th>
+		<th>H34</th>
+		<th>H36</th>
+		<th>H38</th>
+		<th>H40</th>
+		<th>H42</th>
+		<th>H44</th>
+		<th>H46</th>
+		<th>H48</th>
+	</tr>
+	{{#each projects}}
+		<tr>
+			<td><font size="4" color="green">{{Market}}</font></td>
+			<td> <font size="2" color="green">Buy</font> <br>  <font size="2" color="red">Sell</font> <br> <font size="2" color="green"> Surplus <br> <font size="2" color="green">num_buy_orders</font> <br> <font size="2" color="red">num_sell_orders</font> <br> <font size="2" color="green">Mean_buy</font> <br> <font size="2" color="red">Mean_sell</font> <br> <font size="2" color="green">Lowest</font> <br> <font size="2" color="green">Highest</font></td>
+
+			<td> <font size="2" color="green">{{Buy_h2}}</font> <br> <font size="2" color="red">{{Sell_h2}}</font> <br> {{#if (gt Over_h2 0)}} <font size="2" color="green">{{Over_h2}}</font> {{else}} <font size="2" color="red">{{Over_h2}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h2}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h2}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h2 NUMS_BUY_ORDER_h2) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h2 NUMS_SELL_ORDER_h2) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h2}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h2}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h4}}</font> <br> <font size="2" color="red">{{Sell_h4}}</font> <br> {{#if (gt Over_h4 0)}} <font size="2" color="green">{{Over_h4}}</font> {{else}} <font size="2" color="red">{{Over_h4}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h4}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h4}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h4 NUMS_BUY_ORDER_h4) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h4 NUMS_SELL_ORDER_h4) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h4}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h4}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h6}}</font> <br> <font size="2" color="red">{{Sell_h6}}</font> <br> {{#if (gt Over_h6 0)}} <font size="2" color="green">{{Over_h6}}</font> {{else}} <font size="2" color="red">{{Over_h6}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h6}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h6}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h6 NUMS_BUY_ORDER_h6) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h6 NUMS_SELL_ORDER_h6) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h6}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h6}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h8}}</font> <br> <font size="2" color="red">{{Sell_h8}}</font> <br> {{#if (gt Over_h8 0)}} <font size="2" color="green">{{Over_h8}}</font> {{else}} <font size="2" color="red">{{Over_h8}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h8}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h8}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h8 NUMS_BUY_ORDER_h8) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h8 NUMS_SELL_ORDER_h8) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h8}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h8}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h10}}</font> <br> <font size="2" color="red">{{Sell_h10}}</font> <br> {{#if (gt Over_h10 0)}} <font size="2" color="green">{{Over_h10}}</font> {{else}} <font size="2" color="red">{{Over_h10}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h10}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h10}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h10 NUMS_BUY_ORDER_h10) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h10 NUMS_SELL_ORDER_h10) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h10}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h10}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h12}}</font> <br> <font size="2" color="red">{{Sell_h12}}</font> <br> {{#if (gt Over_h12 0)}} <font size="2" color="green">{{Over_h12}}</font> {{else}} <font size="2" color="red">{{Over_h12}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h12}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h12}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h12 NUMS_BUY_ORDER_h12) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h12 NUMS_SELL_ORDER_h12) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h12}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h12}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h14}}</font> <br> <font size="2" color="red">{{Sell_h14}}</font> <br> {{#if (gt Over_h14 0)}} <font size="2" color="green">{{Over_h14}}</font> {{else}} <font size="2" color="red">{{Over_h14}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h14}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h14}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h14 NUMS_BUY_ORDER_h14) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h14 NUMS_SELL_ORDER_h14) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h14}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h14}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h16}}</font> <br> <font size="2" color="red">{{Sell_h16}}</font> <br> {{#if (gt Over_h16 0)}} <font size="2" color="green">{{Over_h16}}</font> {{else}} <font size="2" color="red">{{Over_h16}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h16}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h16}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h16 NUMS_BUY_ORDER_h16) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h16 NUMS_SELL_ORDER_h16) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h16}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h16}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h18}}</font> <br> <font size="2" color="red">{{Sell_h18}}</font> <br> {{#if (gt Over_h18 0)}} <font size="2" color="green">{{Over_h18}}</font> {{else}} <font size="2" color="red">{{Over_h18}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h18}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h18}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h18 NUMS_BUY_ORDER_h18) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h18 NUMS_SELL_ORDER_h18) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h18}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h18}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h20}}</font> <br> <font size="2" color="red">{{Sell_h20}}</font> <br> {{#if (gt Over_h20 0)}} <font size="2" color="green">{{Over_h20}}</font> {{else}} <font size="2" color="red">{{Over_h20}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h20}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h20}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h20 NUMS_BUY_ORDER_h20) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h20 NUMS_SELL_ORDER_h20) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h20}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h20}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h22}}</font> <br> <font size="2" color="red">{{Sell_h22}}</font> <br> {{#if (gt Over_h22 0)}} <font size="2" color="green">{{Over_h22}}</font> {{else}} <font size="2" color="red">{{Over_h22}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h22}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h22}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h22 NUMS_BUY_ORDER_h22) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h22 NUMS_SELL_ORDER_h22) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h22}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h22}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h24}}</font> <br> <font size="2" color="red">{{Sell_h24}}</font> <br> {{#if (gt Over_h24 0)}} <font size="2" color="green">{{Over_h24}}</font> {{else}} <font size="2" color="red">{{Over_h24}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h24}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h24}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h24 NUMS_BUY_ORDER_h24) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h24 NUMS_SELL_ORDER_h24) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h24}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h24}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h26}}</font> <br> <font size="2" color="red">{{Sell_h26}}</font> <br> {{#if (gt Over_h26 0)}} <font size="2" color="green">{{Over_h26}}</font> {{else}} <font size="2" color="red">{{Over_h26}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h26}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h26}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h26 NUMS_BUY_ORDER_h26) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h26 NUMS_SELL_ORDER_h26) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h26}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h26}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h28}}</font> <br> <font size="2" color="red">{{Sell_h28}}</font> <br> {{#if (gt Over_h28 0)}} <font size="2" color="green">{{Over_h28}}</font> {{else}} <font size="2" color="red">{{Over_h28}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h28}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h28}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h28 NUMS_BUY_ORDER_h28) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h28 NUMS_SELL_ORDER_h28) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h28}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h28}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h30}}</font> <br> <font size="2" color="red">{{Sell_h30}}</font> <br> {{#if (gt Over_h30 0)}} <font size="2" color="green">{{Over_h30}}</font> {{else}} <font size="2" color="red">{{Over_h30}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h30}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h30}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h30 NUMS_BUY_ORDER_h30) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h30 NUMS_SELL_ORDER_h30) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h30}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h30}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h32}}</font> <br> <font size="2" color="red">{{Sell_h32}}</font> <br> {{#if (gt Over_h32 0)}} <font size="2" color="green">{{Over_h32}}</font> {{else}} <font size="2" color="red">{{Over_h32}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h32}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h32}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h32 NUMS_BUY_ORDER_h32) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h32 NUMS_SELL_ORDER_h32) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h32}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h32}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h34}}</font> <br> <font size="2" color="red">{{Sell_h34}}</font> <br> {{#if (gt Over_h34 0)}} <font size="2" color="green">{{Over_h34}}</font> {{else}} <font size="2" color="red">{{Over_h34}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h34}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h34}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h34 NUMS_BUY_ORDER_h34) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h34 NUMS_SELL_ORDER_h34) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h34}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h34}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h36}}</font> <br> <font size="2" color="red">{{Sell_h36}}</font> <br> {{#if (gt Over_h36 0)}} <font size="2" color="green">{{Over_h36}}</font> {{else}} <font size="2" color="red">{{Over_h36}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h36}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h36}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h36 NUMS_BUY_ORDER_h36) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h36 NUMS_SELL_ORDER_h36) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h36}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h36}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h38}}</font> <br> <font size="2" color="red">{{Sell_h38}}</font> <br> {{#if (gt Over_h38 0)}} <font size="2" color="green">{{Over_h38}}</font> {{else}} <font size="2" color="red">{{Over_h38}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h38}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h38}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h38 NUMS_BUY_ORDER_h38) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h38 NUMS_SELL_ORDER_h38) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h38}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h38}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h40}}</font> <br> <font size="2" color="red">{{Sell_h40}}</font> <br> {{#if (gt Over_h40 0)}} <font size="2" color="green">{{Over_h40}}</font> {{else}} <font size="2" color="red">{{Over_h40}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h40}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h40}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h40 NUMS_BUY_ORDER_h40) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h40 NUMS_SELL_ORDER_h40) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h40}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h40}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h42}}</font> <br> <font size="2" color="red">{{Sell_h42}}</font> <br> {{#if (gt Over_h42 0)}} <font size="2" color="green">{{Over_h42}}</font> {{else}} <font size="2" color="red">{{Over_h42}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h42}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h42}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h42 NUMS_BUY_ORDER_h42) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h42 NUMS_SELL_ORDER_h42) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h42}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h42}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h44}}</font> <br> <font size="2" color="red">{{Sell_h44}}</font> <br> {{#if (gt Over_h44 0)}} <font size="2" color="green">{{Over_h44}}</font> {{else}} <font size="2" color="red">{{Over_h44}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h44}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h44}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h44 NUMS_BUY_ORDER_h44) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h44 NUMS_SELL_ORDER_h44) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h44}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h44}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h46}}</font> <br> <font size="2" color="red">{{Sell_h46}}</font> <br> {{#if (gt Over_h46 0)}} <font size="2" color="green">{{Over_h46}}</font> {{else}} <font size="2" color="red">{{Over_h46}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h46}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h46}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h46 NUMS_BUY_ORDER_h46) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h46 NUMS_SELL_ORDER_h46) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h46}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h46}}</font> </td>
+
+			<td> <font size="2" color="green">{{Buy_h48}}</font> <br> <font size="2" color="red">{{Sell_h48}}</font> <br> {{#if (gt Over_h48 0)}} <font size="2" color="green">{{Over_h48}}</font> {{else}} <font size="2" color="red">{{Over_h48}}</font> {{/if}} <br> <font size="2" color="green">{{NUMS_BUY_ORDER_h48}}</font> <br> <font size="2" color="red">{{NUMS_SELL_ORDER_h48}}</font> <br><font size="2" color="green">{{toFixed (divide Buy_h48 NUMS_BUY_ORDER_h48) 8}}</font> <br> <font size="2" color="red">{{toFixed (divide Sell_h48 NUMS_SELL_ORDER_h48) 8}}</font> <br> <font size="2" color="green">{{LOWEST_PRICE_h48}}</font> <br> <font size="2" color="green">{{HIGHEST_PRICE_h48}}</font> </td>
+
+		</tr>
+	{{/each}}
+ {{else}}
+	<p>No projects</p>
+ {{/if}}
