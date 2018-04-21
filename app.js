@@ -7,6 +7,8 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var multer = require('multer');
 var upload = multer({dest: './public/images/bittrex'});
+var compression = require('compression')
+
 
 var frame1h = require('./routes/frame1h');
 var admin = require('./routes/admin');
@@ -15,6 +17,8 @@ var frame1d = require('./routes/frame1d');
 
 
 var app = express();
+app.use(compression())
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));

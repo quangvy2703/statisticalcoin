@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var compression = require('compression')
+
 
 var connection = mysql.createConnection({
 	host: 'localhost',
@@ -33,7 +35,7 @@ router.get('/', function(req, res, next){
 	var max = 11000;
 	var couter = 0;
 	var inner_couter = 0;
-
+	res.flush()
 	connection.query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bittrex_data';", function(err, rows, fields){
 		if(err) throw err;
 		max = rows.length;
@@ -46,7 +48,8 @@ router.get('/', function(req, res, next){
 							 "ROUND(SUM(IF(OrderType='BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760 , Total, 0)), 4) as Buy_d5,  ROUND(SUM(IF(OrderType='SELL' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760, Total, 0)), 4) as Sell_d5, ROUND((SUM(IF(OrderType='BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760 , Total, 0)) - SUM(IF(OrderType='SELL' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760 , Total, 0))), 4) as Over_d5, SUM(IF(OrderType = 'BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760 , 1, 0)) AS NUMS_BUY_ORDER_d5, SUM(IF(OrderType = 'SELL'  AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760 , 1, 0)) AS NUMS_SELL_ORDER_d5, MIN(IF(TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760, Price, 100000)) AS LOWEST_PRICE_d5, MAX(IF(TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 7200 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=5760, Price, 0)) AS HIGHEST_PRICE_d5, " +
 							 "ROUND(SUM(IF(OrderType='BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200 , Total, 0)), 4) as Buy_d6,  ROUND(SUM(IF(OrderType='SELL' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200, Total, 0)), 4) as Sell_d6, ROUND((SUM(IF(OrderType='BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200 , Total, 0)) - SUM(IF(OrderType='SELL' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200 , Total, 0))), 4) as Over_d6, SUM(IF(OrderType = 'BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200 , 1, 0)) AS NUMS_BUY_ORDER_d6, SUM(IF(OrderType = 'SELL'  AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200 , 1, 0)) AS NUMS_SELL_ORDER_d6, MIN(IF(TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200, Price, 100000)) AS LOWEST_PRICE_d6, MAX(IF(TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 8640 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=7200, Price, 0)) AS HIGHEST_PRICE_d6, " +
 							 "ROUND(SUM(IF(OrderType='BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640 , Total, 0)), 4) as Buy_d7,  ROUND(SUM(IF(OrderType='SELL' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640, Total, 0)), 4) as Sell_d7, ROUND((SUM(IF(OrderType='BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640 , Total, 0)) - SUM(IF(OrderType='SELL' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640 , Total, 0))), 4) as Over_d7, SUM(IF(OrderType = 'BUY' AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640 , 1, 0)) AS NUMS_BUY_ORDER_d7, SUM(IF(OrderType = 'SELL'  AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640 , 1, 0)) AS NUMS_SELL_ORDER_d7, MIN(IF(TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640, Price, 100000)) AS LOWEST_PRICE_d7, MAX(IF(TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080 AND TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) >=8640, Price, 0)) AS HIGHEST_PRICE_d7 " +
-							 " FROM " + rows[i].TABLE_NAME, function(err, row, fields){
+							 " FROM " + rows[i].TABLE_NAME + 
+							 " WHERE TIMESTAMPDIFF(MINUTE,TimeStamp,UTC_TIMESTAMP()) < 10080", function(err, row, fields){
 													if(err) throw err;
 												 	for(var i = 0; i < row.length;i++){
 											        	all_rows.push(row[i]);
@@ -62,6 +65,7 @@ router.get('/', function(req, res, next){
 					res.render('frame1d', {
 						"projects":  all_rows
 					});
+					return;
 				}
 										
 			});
